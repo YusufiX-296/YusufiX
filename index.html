@@ -1,0 +1,672 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YusufiX | Resmi Bağlantılar & Oyun Dünyası</title>
+    <!-- Favicon using the logo -->
+    <link rel="icon" type="image/png" href="https://www.designarena.ai/u/62b90fec-05a1-4552-a78b-2c3c0e076932">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#00d2ff',
+                        brandBlueDeep: '#0051ff',
+                        brandGold: '#ffb300',
+                        brandGoldDeep: '#ff7700',
+                        darkBg: '#090b14',
+                        cardBg: 'rgba(16, 20, 36, 0.75)'
+                    },
+                    fontFamily: {
+                        gaming: ['"Chakra Petch"', 'sans-serif'],
+                        sans: ['"Outfit"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --glow-blue: #00d2ff;
+            --glow-gold: #ffb700;
+        }
+
+        body {
+            background-color: #070913;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Ambient background glow split */
+        .bg-lightning-left {
+            position: fixed;
+            top: -20%;
+            left: -15%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(0, 150, 255, 0.18) 0%, rgba(0, 50, 180, 0.05) 50%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(50px);
+            animation: pulseLeft 6s ease-in-out infinite alternate;
+        }
+
+        .bg-lightning-right {
+            position: fixed;
+            top: -20%;
+            right: -15%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(255, 170, 0, 0.16) 0%, rgba(255, 90, 0, 0.05) 50%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(50px);
+            animation: pulseRight 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseLeft {
+            0% { opacity: 0.5; transform: scale(1) translateY(0); }
+            100% { opacity: 0.9; transform: scale(1.1) translateY(20px); }
+        }
+
+        @keyframes pulseRight {
+            0% { opacity: 0.5; transform: scale(1) translateY(0); }
+            100% { opacity: 0.9; transform: scale(1.15) translateY(-20px); }
+        }
+
+        /* Avatar 3D & Glowing Frame */
+        .avatar-container {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .avatar-frame {
+            position: relative;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, #00d2ff 0%, #0044ff 40%, #ff6a00 70%, #ffc400 100%);
+            box-shadow: 0 0 35px rgba(0, 210, 255, 0.4), 0 0 50px rgba(255, 180, 0, 0.35);
+            animation: rotateBorder 8s linear infinite;
+        }
+
+        .avatar-inner {
+            border-radius: 50%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        @keyframes rotateBorder {
+            0% { filter: drop-shadow(0 0 25px rgba(0, 210, 255, 0.6)) hue-rotate(0deg); }
+            50% { filter: drop-shadow(0 0 35px rgba(255, 170, 0, 0.6)) hue-rotate(15deg); }
+            100% { filter: drop-shadow(0 0 25px rgba(0, 210, 255, 0.6)) hue-rotate(0deg); }
+        }
+
+        /* Animated Title Gradient */
+        .title-gradient {
+            background: linear-gradient(90deg, #00e1ff 0%, #ffffff 50%, #ffbb00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Cyberpunk Button Styles */
+        .cyber-btn {
+            position: relative;
+            background: rgba(15, 20, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: 0.5s;
+        }
+
+        .cyber-btn:hover::before {
+            left: 100%;
+        }
+
+        .cyber-btn:hover {
+            transform: translateY(-4px) scale(1.015);
+        }
+
+        /* Specific Button Accents */
+        .btn-instagram:hover {
+            border-color: #E1306C;
+            box-shadow: 0 10px 25px -5px rgba(225, 48, 108, 0.45), inset 0 0 15px rgba(225, 48, 108, 0.2);
+        }
+        .btn-instagram .icon-box {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .btn-discord:hover {
+            border-color: #5865F2;
+            box-shadow: 0 10px 25px -5px rgba(88, 101, 242, 0.5), inset 0 0 15px rgba(88, 101, 242, 0.2);
+        }
+        .btn-discord .icon-box {
+            background: #5865F2;
+        }
+
+        .btn-github:hover {
+            border-color: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.35), inset 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+        .btn-github .icon-box {
+            background: #24292e;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-speedrun:hover {
+            border-color: #00d2ff;
+            box-shadow: 0 10px 25px -5px rgba(0, 210, 255, 0.5), inset 0 0 15px rgba(0, 210, 255, 0.2);
+        }
+        .btn-speedrun .icon-box {
+            background: linear-gradient(135deg, #00d2ff, #0051ff);
+        }
+
+        .btn-game:hover {
+            border-color: #ff9900;
+            box-shadow: 0 12px 30px -5px rgba(255, 153, 0, 0.55), inset 0 0 20px rgba(255, 153, 0, 0.25);
+        }
+        .btn-game .icon-box {
+            background: linear-gradient(135deg, #ff9900, #ff5500);
+        }
+
+        /* Floating Lightning Particles */
+        .spark {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: floatUp 4s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-120px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Category Header Line */
+        .cyber-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .cyber-divider::before, .cyber-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        .cyber-divider:not(:empty)::before {
+            margin-right: 1.25em;
+        }
+        .cyber-divider:not(:empty)::after {
+            margin-left: 1.25em;
+        }
+
+        /* Pulse glow animation for status / badges */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.08); }
+        }
+        .pulse-live {
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        /* Toast notification */
+        #toast {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        #toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Smooth reveal animation */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="relative flex flex-col justify-between items-center px-4 py-8 md:py-14 select-none">
+
+    <!-- Canvas for lightning interactive sparks -->
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Background Atmospheric Lighting -->
+    <div class="bg-lightning-left"></div>
+    <div class="bg-lightning-right"></div>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-lg z-10 flex flex-col items-center">
+
+        <!-- Top Status Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 fade-in-up shadow-lg shadow-cyan-950/20">
+            <span class="w-2.5 h-2.5 rounded-full bg-green-400 pulse-live shadow-[0_0_8px_#4ade80]"></span>
+            <span class="text-xs font-semibold tracking-wider uppercase text-cyan-200">Kanal & Topluluk Portalı</span>
+        </div>
+
+        <!-- Channel Main Logo / Avatar Section -->
+        <div class="avatar-container mb-5 fade-in-up" style="animation-delay: 0.1s;">
+            <div class="avatar-frame p-1.5 w-36 h-36 md:w-44 md:h-44 flex items-center justify-center cursor-pointer transition-transform duration-500 hover:scale-105" id="logoCard">
+                <div class="avatar-inner w-full h-full relative">
+                    <img 
+                        src="https://www.designarena.ai/u/62b90fec-05a1-4552-a78b-2c3c0e076932" 
+                        alt="YusufiX Logo" 
+                        class="w-full h-full object-cover select-none pointer-events-none"
+                    />
+                    <!-- Overlay shine effect -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Titles & Branding -->
+        <div class="text-center mb-8 fade-in-up" style="animation-delay: 0.2s;">
+            <div class="flex items-center justify-center gap-2 mb-1">
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight font-gaming uppercase title-gradient">
+                    YusufiX
+                </h1>
+                <span class="text-brandBlue text-xl" title="Onaylı İçerik Üreticisi">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+            </div>
+            <h2 class="text-lg md:text-xl font-medium text-gray-300 font-sans tracking-wide">
+                <span class="text-brandGold font-semibold">YusufiX</span> İletişim & Sosyal Medya
+            </h2>
+            <p class="text-xs text-gray-400 mt-1 max-w-xs mx-auto">
+                Tüm resmi bağlantılar, speedrun profili ve topluluk sunucusu tek adreste!
+            </p>
+        </div>
+
+        <!-- Action Quick Utilities (Share & Sound) -->
+        <div class="flex items-center gap-3 mb-6 w-full justify-center fade-in-up" style="animation-delay: 0.25s;">
+            <button id="copyLinkBtn" class="px-4 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/10 text-xs text-gray-300 transition-all flex items-center gap-2">
+                <i class="fa-regular fa-clone text-brandBlue"></i>
+                <span>Profili Kopyala</span>
+            </button>
+            <button id="soundToggle" class="px-4 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-amber-400/50 hover:bg-amber-500/10 text-xs text-gray-300 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-volume-high text-brandGold" id="soundIcon"></i>
+                <span id="soundText">Ses: Açık</span>
+            </button>
+        </div>
+
+        <!-- MAIN LINKS LIST -->
+        <div class="w-full space-y-3.5 fade-in-up" style="animation-delay: 0.3s;">
+            
+            <!-- 1. Instagram Button -->
+            <a href="https://www.instagram.com/yusufix296/" target="_blank" rel="noopener noreferrer" 
+               class="cyber-btn btn-instagram group w-full p-3.5 rounded-2xl flex items-center justify-between text-left">
+                <div class="flex items-center gap-4">
+                    <div class="icon-box w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg transition-transform group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider font-gaming">Sosyal Medya</div>
+                        <div class="text-base md:text-lg font-bold text-white group-hover:text-pink-400 transition-colors">
+                            Instagram
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-gray-400 group-hover:text-pink-400 transition-all pr-2">
+                    <span class="text-xs font-medium hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity">@yusufix296</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-sm transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <!-- 2. Discord Button -->
+            <a href="https://discord.gg/zBeZ68GPTC" target="_blank" rel="noopener noreferrer" 
+               class="cyber-btn btn-discord group w-full p-3.5 rounded-2xl flex items-center justify-between text-left">
+                <div class="flex items-center gap-4">
+                    <div class="icon-box w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg transition-transform group-hover:scale-110 group-hover:-rotate-6">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider font-gaming">Topluluk & Sohbet</div>
+                        <div class="text-base md:text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                            Discord Sunucusu
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-gray-400 group-hover:text-indigo-400 transition-all pr-2">
+                    <span class="text-xs font-medium hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity">Katıl</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-sm transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <!-- 3. GitHub Button -->
+            <a href="https://github.com/YusufiX-296" target="_blank" rel="noopener noreferrer" 
+               class="cyber-btn btn-github group w-full p-3.5 rounded-2xl flex items-center justify-between text-left">
+                <div class="flex items-center gap-4">
+                    <div class="icon-box w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg transition-transform group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider font-gaming">Yazılım & Projeler</div>
+                        <div class="text-base md:text-lg font-bold text-white group-hover:text-gray-100 transition-colors">
+                            GitHub
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-gray-400 group-hover:text-white transition-all pr-2">
+                    <span class="text-xs font-medium hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity">@YusufiX-296</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-sm transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+            </a>
+
+            <!-- 4. Speedrun.com Button -->
+            <a href="https://www.speedrun.com/users/YusufiX296" target="_blank" rel="noopener noreferrer" 
+               class="cyber-btn btn-speedrun group w-full p-3.5 rounded-2xl flex items-center justify-between text-left">
+                <div class="flex items-center gap-4">
+                    <div class="icon-box w-12 h-12 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg transition-transform group-hover:scale-110 group-hover:-rotate-6">
+                        <i class="fa-solid fa-stopwatch-20"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-gray-400 uppercase tracking-wider font-gaming">Rekorlar & Sıralama</div>
+                        <div class="text-base md:text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                            Speedrun.com
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-gray-400 group-hover:text-cyan-300 transition-all pr-2">
+                    <span class="text-xs font-medium hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity">Skor Tablosu</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-sm transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- CATEGORY SECTION: Oynadığım Oyunlar -->
+        <div class="w-full mt-10 mb-4 fade-in-up" style="animation-delay: 0.4s;">
+            
+            <div class="cyber-divider font-gaming text-sm tracking-widest uppercase font-bold text-amber-400/90 mb-4">
+                <span class="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300">
+                    <i class="fa-solid fa-gamepad text-amber-400"></i>
+                    Oynadığım Oyunlar
+                </span>
+            </div>
+
+            <!-- Super Bear Adventure Game Card / Button -->
+            <a href="https://superbearadventure.com" target="_blank" rel="noopener noreferrer"
+               class="cyber-btn btn-game group w-full p-4 rounded-2xl flex items-center justify-between text-left border border-amber-500/30">
+                <div class="flex items-center gap-4">
+                    <div class="icon-box w-13 h-13 p-2.5 rounded-xl flex items-center justify-center text-white text-2xl shadow-lg transition-transform group-hover:scale-110 group-hover:rotate-6">
+                        <i class="fa-solid fa-paw text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-base md:text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+                                Super Bear Adventure
+                            </span>
+                            <span class="bg-amber-400/20 text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-400/30">
+                                Favori
+                            </span>
+                        </div>
+                        <div class="text-xs text-gray-400 mt-0.5">
+                            Resmi Oyunu & Dünyasını İncele
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-amber-400 pr-2">
+                    <span class="text-xs font-semibold hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity">Siteyi Aç</span>
+                    <i class="fa-solid fa-chevron-right text-sm transform group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+            
+        </div>
+
+        <!-- YouTube Direct Channel Quick View / Subscribe Card -->
+        <div class="w-full mt-4 p-4 rounded-2xl bg-red-600/10 border border-red-500/20 flex items-center justify-between backdrop-blur-md fade-in-up" style="animation-delay: 0.45s;">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-lg shadow-red-600/30">
+                    <i class="fa-brands fa-youtube text-xl"></i>
+                </div>
+                <div>
+                    <div class="text-sm font-bold text-white font-gaming">YouTube Kanalım</div>
+                    <div class="text-xs text-gray-400">Yeni videolar ve canlı yayınlar</div>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/@YusufiX-296" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs tracking-wide transition-all shadow-md hover:shadow-red-600/50 flex items-center gap-1.5">
+                <i class="fa-solid fa-play text-[10px]"></i>
+                <span>İzle</span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-lg mt-10 text-center text-xs text-gray-500 py-4 z-10 fade-in-up" style="animation-delay: 0.5s;">
+        <div class="flex items-center justify-center gap-2 mb-2 text-gray-400">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <span class="font-gaming font-semibold tracking-wider text-gray-300">YUSUFIX &copy; <span id="currentYear"></span></span>
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+        </div>
+        <p class="text-[11px] text-gray-600">
+            Tüm hakları saklıdır. Topluluk ve oyun içerikleri sayfası.
+        </p>
+    </footer>
+
+    <!-- Toast Popup for Link Copy -->
+    <div id="toast" class="fixed bottom-6 z-50 flex items-center gap-3 bg-gray-900 border border-cyan-400/40 text-white px-5 py-3 rounded-2xl shadow-2xl shadow-cyan-500/20 backdrop-blur-xl">
+        <i class="fa-solid fa-circle-check text-green-400 text-lg"></i>
+        <span class="text-sm font-medium">Sayfa bağlantısı panoya kopyalandı!</span>
+    </div>
+
+    <!-- JavaScript Interactive Effects -->
+    <script>
+        // Set dynamic current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Audio synthesizer using Web Audio API for sleek gaming UI sound effects
+        let soundEnabled = true;
+        const soundToggle = document.getElementById('soundToggle');
+        const soundIcon = document.getElementById('soundIcon');
+        const soundText = document.getElementById('soundText');
+
+        let audioCtx = null;
+
+        function playUiSound(freq = 600, type = 'sine', duration = 0.08) {
+            if (!soundEnabled) return;
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(freq * 1.5, audioCtx.currentTime + duration);
+                
+                gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch (e) {
+                // Audio context not allowed without prior user interaction
+            }
+        }
+
+        // Toggle Sound setting
+        soundToggle.addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            if (soundEnabled) {
+                soundIcon.className = 'fa-solid fa-volume-high text-brandGold';
+                soundText.textContent = 'Ses: Açık';
+                playUiSound(800, 'triangle', 0.1);
+            } else {
+                soundIcon.className = 'fa-solid fa-volume-xmark text-gray-400';
+                soundText.textContent = 'Ses: Kapalı';
+            }
+        });
+
+        // Add sound hover feedback to all buttons and cards
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                playUiSound(440, 'sine', 0.05);
+            });
+            el.addEventListener('click', () => {
+                playUiSound(880, 'triangle', 0.12);
+            });
+        });
+
+        // 3D Tilt Effect on Avatar Card
+        const logoCard = document.getElementById('logoCard');
+        if (logoCard) {
+            logoCard.addEventListener('mousemove', (e) => {
+                const rect = logoCard.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = (-y / (rect.height / 2)) * 18;
+                const rotateY = (x / (rect.width / 2)) * 18;
+                logoCard.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.06, 1.06, 1.06)`;
+            });
+
+            logoCard.addEventListener('mouseleave', () => {
+                logoCard.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        }
+
+        // Share / Copy Link functionality with Toast
+        const copyBtn = document.getElementById('copyLinkBtn');
+        const toast = document.getElementById('toast');
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                showToast();
+            }).catch(() => {
+                // Fallback
+                const tempInput = document.createElement('input');
+                tempInput.value = window.location.href;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                showToast();
+            });
+        });
+
+        function showToast() {
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2800);
+        }
+
+        // Canvas Electric Particles (Cyan & Amber) Background Animation
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        class SparkParticle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 50;
+                this.size = Math.random() * 2.5 + 1;
+                this.speedY = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 1.2;
+                this.opacity = Math.random() * 0.7 + 0.3;
+                this.life = Math.random() * 150 + 100;
+                this.age = 0;
+                
+                // Color matches logo split: left half cyan/blue, right half amber/orange
+                if (this.x < width / 2) {
+                    this.color = Math.random() > 0.4 ? 'rgba(0, 210, 255,' : 'rgba(0, 100, 255,';
+                } else {
+                    this.color = Math.random() > 0.4 ? 'rgba(255, 180, 0,' : 'rgba(255, 90, 0,';
+                }
+            }
+
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                this.age++;
+                if (this.age >= this.life || this.y < -10) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                const currentOpacity = (1 - (this.age / this.life)) * this.opacity;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `${this.color} ${currentOpacity})`;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = this.color.includes('210') ? '#00d2ff' : '#ffb700';
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        const particleCount = Math.min(width < 768 ? 25 : 55, 60);
+        const particles = [];
+        for (let i = 0; i < particleCount; i++) {
+            const p = new SparkParticle();
+            p.y = Math.random() * height; // initial scatter
+            particles.push(p);
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
